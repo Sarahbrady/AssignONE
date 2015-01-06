@@ -1,22 +1,29 @@
 <script>
+  alert("You are sitting in a bakery and smell freshly baked cupcakes. Before you can order one the cashier makes a deal with you. Pick a number between 1-100, you have 7 guesses. If you guess right you get a cupcake on the house!");
 
-    alert("You are sitting in a bakery and smell freshly baked cupcakes. 
-  Before you can order one the cashier makes a deal with you. 
-  Pick a number between 1-100, you have 7 guesses. If you guess 
-  right you get a cupcake on the house!");
+  var answer = 42,
+      guess = prompt("Feeling hungry? Take a guess!")
+      win = false;
 
-var answer = 42,
-var guess = prompt("Feeling hungry? Take a guess!");
-
-for(i = 0; i < 7; i++) {
-
-  if (guess == answer) {
-    //should this be a return instead of an alert?
-    alert ("You guessed right! Did you cheat?!")
-    break;
-  } 
-  else{
-    guess = prompt("You chose...poorly. Want to give it another go?");
+  for(i = 0; i < 6; i++) {
+    if (guess == answer) {
+      alert("You guessed right! Did you cheat?!")
+      win = true;
+      break;
+    }
+    else if (guess <= 30) {
+      guess = prompt("Brrr! You're freezing! Try again.")
+    }
+    else if (guess <= 50) {
+      guess = prompt("Ooooh, you're almost as warm as these cookies! Try again!")
+    }
+    else {
+      guess = prompt("Brrr! You're freezing! Try again.")
+    }
   }
-}
+
+  if (win == false) {
+    alert("LOSER!")
+  }
+
 </script>
